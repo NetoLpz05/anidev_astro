@@ -1,7 +1,7 @@
 ---
 title: Horimiya (ホリミヤ)
 author: HERO & Daisuke Hagiwara
-img: https://m.media-amazon.com/images/I/81L9fW3WstL._SL1500_.jpg
+img: horimiya.jpg
 readtime: 40
 description: A primera vista, Kyoko Hori es una chica popular y brillante, mientras que Izumi Miyamura es un nerd sombrío. Sin embargo, fuera de la escuela, ambos esconden facetas completamente diferentes que los unirán de forma inesperada.
 buy:

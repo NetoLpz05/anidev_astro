@@ -1,0 +1,116 @@
+---
+import { getCollection, render } from "astro:content";
+import { SHOW_BUY_BUTTON } from "astro:env/server";
+import Layout from "../../layouts/Layout.astro";
+import BookScore from "../../components/bookScore.astro";
+
+export async function getStaticPaths() {
+  const books = await getCollection("books");
+  return books.map((book) => {
+    const cleanId = book.id.replace(/\.md$/, "");
+    return {
+      params: { id: cleanId },
+      props: { book },
+    };
+  });
+}
+
+const { book } = Astro.props;
+const { data, slug } = book;
+const { title, author, img, readtime, description, buy } = data;
+
+const { Content } = await render(book);
+---
+
+<Layout title={`${title} - AniDev`}>
+  <div
+    class="max-w-6xl mx-auto px-6 py-20 flex flex-col md:flex-row gap-12 items-start text-white"
+  >
+    <aside
+      class="flex flex-col items-center md:items-start w-full md:w-72 flex-shrink-0"
+    >
+      <a
+        href="/"
+        class="group flex items-center gap-2 mb-6 text-sm font-semibold text-gray-400 hover:text-purple-400 transition-colors duration-200 self-start md:self-auto"
+      >
+        <span
+          class="transform transition-transform duration-200 group-hover:-translate-x-1"
+        >
+          ←
+        </span>
+        Volver al inicio
+      </a>
+
+      <img
+        class="rounded-lg w-72 h-auto shadow-2xl mb-4 object-cover"
+        src={`/${img}`}
+        alt={title}
+        transition:name={`img-${slug}`}
+      />
+
+      <BookScore server:defer id={slug} />
+
+      <span
+        class="block w-full text-center text-sm font-semibold text-yellow-400 mb-4"
+        id="score"></span>
+      <div class="w-full space-y-3">
+        {
+          SHOW_BUY_BUTTON && (
+            <>
+              <a
+                href={buy.mexico}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block text-center bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-4 rounded-lg transition hover:scale-105 text-sm"
+              >
+                Comprar en México 🇲🇽
+              </a>
+              <a
+                href={buy.usa}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="block text-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-4 rounded-lg transition hover:scale-105 text-sm"
+              >
+                Comprar en USA 🇺🇸
+              </a>
+            </>
+          )
+        }
+
+        <span class="block text-center text-xs text-gray-400 mt-2 italic">
+          ⏱️ Tiempo de lectura: {readtime} horas
+        </span>
+      </div>
+    </aside>
+
+    <main class="flex-1">
+      <h1
+        class="text-4xl md:text-5xl font-extrabold mb-2 tracking-tight leading-tight"
+      >
+        {title}
+      </h1>
+      <p class="text-xl text-purple-400 font-medium mb-6">Por {author}</p>
+
+      <div
+        class="prose prose-invert max-w-none text-gray-300 leading-relaxed space-y-4 text-base md:text-lg"
+      >
+        <Content />
+      </div>
+    </main>
+  </div>
+</Layout>
+
+<script>
+  import { SCORE_API_ENDPOINT } from "astro:env/client";
+
+  const scoreElement = document.querySelector("#score");
+
+  fetch(SCORE_API_ENDPOINT)
+    .then((res) => res.text())
+    .then((scoreValue) => {
+      if (scoreElement) {
+        scoreElement.innerHTML = `⭐ Puntuación: ${scoreValue.trim()}/5`;
+      }
+    })
+    .catch((err) => console.error("Error al cargar la puntuación:", err));
+</script>

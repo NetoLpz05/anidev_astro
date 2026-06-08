@@ -1,7 +1,7 @@
 ---
 title: Attack on Titan (進撃の巨人 / Shingeki no Kyojin)
 author: Hajime Isayama
-img: https://m.media-amazon.com/images/I/91p6P1+BUtL._SL1500_.jpg
+img: shingeki.webp
 readtime: 55
 description: La humanidad vive confinada dentro de gigantescas murallas para protegerse de los Titanes, colosales criaturas devoradoras de hombres. Cuando la paz se rompe tras un siglo de calma, Eren Yeager jura exterminar hasta al último de ellos.
 buy:

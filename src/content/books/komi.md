@@ -1,9 +1,9 @@
 ---
 title: Komi Can't Communicate (古見さんは、コミュ症です。)
 author: Tomohito Oda
-img: https://m.media-amazon.com/images/I/81vR8g+rU6L._SL1500_.jpg
+img: komi.jpg
 readtime: 35
-description: Shouko Komi es la chica más hermosa y elegante de la escuela, pero padece un trastorno de ansiedad social extremo. Su ordinario compañero, Hitohito Tadano, descubre su secreto y decide ayudarla a cumplir su meta: hacer 100 amigos.
+description: "Shouko Komi es la chica más hermosa y elegante de la escuela, pero padece un trastorno de ansiedad social extremo. Su ordinario compañero, Hitohito Tadano, descubre su secreto y decide ayudarla a cumplir su meta: hacer 100 amigos."
 buy:
   mexico: https://www.amazon.com.mx/Komi-San-Cant-Communicate-Tomohito-Oda/dp/6075683417/
   usa: https://www.amazon.com/Komi-Cant-Communicate-Vol-1/dp/1974707121/

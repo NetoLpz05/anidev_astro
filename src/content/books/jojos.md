@@ -1,7 +1,7 @@
 ---
-title: JoJo's Bizarre Adventure - Part 1: Phantom Blood (ジョジョの奇妙な冒険)
+title: "JJBA - Phantom Blood"
 author: Hirohiko Araki
-img: https://m.media-amazon.com/images/I/91tUshC-3AL._SL1500_.jpg
+img: jojos.png
 readtime: 60
 description: La legendaria saga que abarca múltiples generaciones de la familia Joestar comienza aquí, en la Inglaterra del siglo XIX, con la intensa rivalidad entre Jonathan Joestar y el despiadado Dio Brando.
 buy:

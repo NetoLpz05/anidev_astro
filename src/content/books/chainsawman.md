@@ -1,7 +1,7 @@
 ---
 title: Chainsaw Man (チェンソーマン)
 author: Tatsuki Fujimoto
-img: https://m.media-amazon.com/images/I/81p8OsnVb9L._SL1500_.jpg
+img: csm.jpg
 readtime: 45
 description: Denji es un joven atrapado en la pobreza extrema que caza demonios para pagar las deudas de su padre. Tras ser traicionado, se fusiona con su perro demonio Pochita y renace como el brutal Chainsaw Man.
 buy:

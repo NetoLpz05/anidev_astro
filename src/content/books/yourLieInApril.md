@@ -1,7 +1,7 @@
 ---
-title: Your Lie in April (四月は君の嘘 / Shigatsu wa Kimi no Uso)
+title: Your Lie in April (四月は君の嘘)
 author: Naoshi Arakawa
-img: https://m.media-amazon.com/images/I/81xUe7W-M3L._SL1500_.jpg
+img: ylia.jpg
 readtime: 50
 description: Tras la muerte de su madre, el prodigio del piano Kousei Arima pierde la capacidad de escuchar la música de su propio instrumento. Su monótono mundo cambia de color al conocer a Kaori Miyazono, una violinista libre y audaz.
 buy:

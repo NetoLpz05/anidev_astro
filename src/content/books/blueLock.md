@@ -1,7 +1,7 @@
 ---
 title: Blue Lock (ブルーロック)
 author: Muneyuki Kaneshiro & Yusuke Nomura
-img: https://m.media-amazon.com/images/I/81d3A+O5b9L._SL1500_.jpg
+img: bluelock.jpg
 readtime: 45
 description: Tras una desastrosa derrota en el Mundial de 2018, Japón decide aislar a 300 jóvenes delanteros en una institución de alta tecnología llamada Blue Lock para crear al delantero más egoísta y letal del planeta.
 buy:

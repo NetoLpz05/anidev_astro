@@ -1,7 +1,7 @@
 ---
-title: Sword Art Online: Aincrad (ソードアート・オンライン)
+title: "Sword Art Online (ソードアート・オンライン)"
 author: Reki Kawahara (Historia) & abec (Ilustraciones)
-img: https://m.media-amazon.com/images/I/71rIeK7e9XL._SL1149_.jpg
+img: sao.jpg
 readtime: 120
 description: Diez mil jugadores quedan atrapados dentro del videojuego de realidad virtual Sword Art Online, donde morir en el juego significa la muerte en el mundo real. El jugador solitario Kirito luchará por llegar al piso 100 y liberar a todos.
 buy:

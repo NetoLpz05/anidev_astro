@@ -1,7 +1,7 @@
 ---
-title: My Hero Academia (僕 de ヒーローアカデミア)
+title: My Hero Academia (僕のヒーローアカデミア)
 author: Kohei Horikoshi
-img: https://m.media-amazon.com/images/I/815bZf8S-4L._SL1500_.jpg
+img: mha.jpg
 readtime: 50
 description: En un mundo donde el 80% de la población posee superpoderes, Izuku Midoriya nació sin ninguno. Sin embargo, su destino cambia radicalmente tras conocer al héroe número uno, All Might.
 buy:
