@@ -1,55 +1,87 @@
 ---
-import Layout from "../layouts/Layout.astro";
 import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
 
 const books = await getCollection("books");
 ---
 
-<Layout title="AniDev: Mangas (y ya jeje)">
-  <main>
-    <h1 class="text-center text-7xl font-extrabold mb-24 text-white">AniDev</h1>
-  </main>
+<Layout title="AniDev - Catálogo de Mangas">
+  <div
+    class="relative w-full min-h-screen overflow-hidden bg-zinc-950 text-white"
+  >
+    <div
+      class="absolute inset-0 pointer-events-none overflow-hidden"
+      aria-hidden="true"
+    >
+      <div
+        class="absolute -top-40 -left-20 w-[700px] h-[700px] rounded-full bg-purple-600 opacity-[0.12] blur-[130px]"
+      >
+      </div>
 
-  <section aria-label="Mejores mangas del fokin worl">
-    <div class="px-4 mx-auto max-w-7xl">
-      <div class="grid gap-6 grid-cols-1 md:grid-cols-2">
+      <div
+        class="absolute top-1/4 -right-40 w-[600px] h-[600px] rounded-full bg-blue-600 opacity-[0.08] blur-[140px]"
+      >
+      </div>
+
+      <div
+        class="absolute bottom-10 -left-40 w-[500px] h-[500px] rounded-full bg-indigo-500 opacity-[0.06] blur-[120px]"
+      >
+      </div>
+    </div>
+
+    <main class="relative z-10 max-w-6xl mx-auto px-6 py-16">
+      <header class="mb-16 text-center md:text-left">
+        <h1
+          class="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 bg-gradient-to-r from-purple-400 to-blue-500 bg-clip-text text-transparent"
+        >
+          AniDev <span class="text-white">Mangas</span>
+        </h1>
+        <p class="text-gray-400 text-lg">Tu rincón de lectura favorito.</p>
+      </header>
+
+      <section
+        class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8"
+      >
         {
           books.map((book) => {
             const { slug, data } = book;
-            const { title, author, img, readtime, description, buy } = data;
-            const cleanId = slug.replace(/\.md$/, "");
+            const { title, author, img, description } = data;
 
             return (
-              <article class="flex">
-                <a
-                  href={`/libro/${cleanId}`}
-                  class="mb-2 xl:mb-0 transition hover:scale-105 flex-shrink-0"
-                >
-                  <img
-                    transition:name={`img-${slug}`}
-                    class="w-32 md:w-44 rounded-lg object-cover"
-                    src={`/${img}`}
-                    alt={title}
-                  />
-                </a>
+              <article class="flex flex-col bg-zinc-900/50 backdrop-blur-sm border border-zinc-800 rounded-xl overflow-hidden hover:scale-[1.02] transition-all duration-300 group shadow-lg">
+                <a href={`/libro/${slug}`} class="flex flex-col h-full">
+                  {/* Contenedor de la imagen */}
+                  <div class="overflow-hidden aspect-[3/4] relative bg-zinc-950">
+                    <img
+                      class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                      src={`/${img}`}
+                      alt={`Portada de ${title}`}
+                      transition:name={`img-${slug}`}
+                    />
+                  </div>
 
-                <div class="flex flex-col justify-center ml-5">
-                  <h2 class="mb-2 text-2xl font-bold leading-tight text-white">
-                    {title}
-                  </h2>
-                  <p class="text-gray-400 text-sm mb-2">Por {author}</p>
-                  <p class="mb-4 text-gray-300 max-w-sm text-sm line-clamp-3">
-                    {description}
-                  </p>
-                  <span class="text-xs text-purple-400 font-semibold">
-                    Lectura en {readtime} horas
-                  </span>
-                </div>
+                  {/* Textos del Manga */}
+                  <div class="p-5 flex flex-col flex-grow">
+                    <h2 class="text-xl font-bold line-clamp-1 group-hover:text-purple-400 transition-colors">
+                      {title}
+                    </h2>
+                    <p class="text-sm text-purple-300 font-medium mb-3">
+                      Por {author}
+                    </p>
+                    <p class="text-sm text-gray-400 line-clamp-3 flex-grow mb-4 leading-relaxed">
+                      {description}
+                    </p>
+
+                    <span class="inline-flex items-center justify-center w-full py-2.5 px-4 rounded-lg bg-zinc-800 group-hover:bg-purple-600 text-sm font-semibold text-white transition-colors duration-200 mt-auto">
+                      Ver detalles →
+                    </span>
+                  </div>
+                </a>
               </article>
             );
           })
         }
-      </div>
-    </div>
-  </section>
+      </section>
+    </main>
+  </div>
 </Layout>
